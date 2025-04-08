@@ -1,6 +1,11 @@
 [build]
 publish = "frontend"
-command = ""
+
+[build.processing]
+skip_processing = true
+
+[build.environment]
+PYTHON_VERSION = "none"
 
 [[redirects]]
 from = "/*"
