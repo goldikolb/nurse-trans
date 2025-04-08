@@ -7,18 +7,22 @@ import os
 
 app = FastAPI()
 
-# CORS-Einstellungen
+# CORS-Einstellungen müssen VOR allen Routen kommen
+origins = [
+    "https://nurses-trans.netlify.app",
+    "http://localhost:3000",
+    "http://localhost:5500",
+    "http://127.0.0.1:5500"
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "https://nurses-trans.netlify.app",  # Aktuelle Netlify-Domain
-        "http://localhost:5500",
-        "http://127.0.0.1:5500"
-    ],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"],
+    max_age=3600,
 )
 
 # Whisper-Modell laden (tiny für schnelleres Laden und weniger Speicherverbrauch)
