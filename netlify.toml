@@ -1,13 +1,6 @@
 [build]
 publish = "frontend"
+command = "echo 'No build required'"
 
-[build.processing]
-skip_processing = true
-
-[build.environment]
-PYTHON_VERSION = "none"
-
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+[dev]
+framework = "#static"
