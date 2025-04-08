@@ -19,8 +19,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Whisper-Modell laden
-model = whisper.load_model("base")
+# Whisper-Modell laden (tiny statt base für weniger Speicherverbrauch)
+model = whisper.load_model("tiny")
 
 @app.post("/transcribe")
 async def transcribe_audio(file: UploadFile = File(...)):
