@@ -12,9 +12,9 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://nurses-trans.netlify.app",  # Ihre aktuelle Netlify-Domain
-        "http://localhost:5500",  # Für lokale Entwicklung
-        "http://127.0.0.1:5500"   # Für lokale Entwicklung
+        "https://nurses-trans.netlify.app",  # Aktuelle Netlify-Domain
+        "http://localhost:5500",
+        "http://127.0.0.1:5500"
     ],
     allow_credentials=True,
     allow_methods=["*"],
